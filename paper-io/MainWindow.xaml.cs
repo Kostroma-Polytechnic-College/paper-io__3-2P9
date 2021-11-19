@@ -24,5 +24,25 @@ namespace paper_io
         {
             InitializeComponent();
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            byte a;
+            bool success = byte.TryParse(Gamers.Text, out a);
+            if (success)
+            {
+                if (a <= 1)
+                {
+                    Error.Content = "Слишком мало";
+                }
+                if (a > 10)
+                {
+                    Error.Content = "Слишком много";
+                }
+            }
+            else
+            {
+                Error.Content = "Должно быть положительное число";
+            }
+        }
     }
 }
