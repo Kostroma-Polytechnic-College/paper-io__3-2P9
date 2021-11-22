@@ -20,23 +20,29 @@ namespace paper_io
     /// </summary>
     public partial class MainWindow : Window
     {
+        Game game;
+
         public MainWindow()
         {
             InitializeComponent();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            byte a;
-            bool success = byte.TryParse(Gamers.Text, out a);
+            byte n;
+            bool success = byte.TryParse(Gamers.Text, out n);
             if (success)
             {
-                if (a <= 1)
+                if (n <= 1)
                 {
                     Error.Content = "Слишком мало";
                 }
-                if (a > 10)
+                if (n > 10)
                 {
                     Error.Content = "Слишком много";
+                }
+                else
+                {
+                    game = new Game(n);
                 }
             }
             else

@@ -11,7 +11,7 @@ namespace paper_io
 
         public Player[] Players;
         public Player[,] Room;
-        public Game(int n)
+        public Game(byte n)
         {
             Players = new Player[n];
             Room = new Player[n * 10, n * 10];
