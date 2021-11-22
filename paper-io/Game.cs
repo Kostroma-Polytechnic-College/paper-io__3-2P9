@@ -18,4 +18,11 @@ namespace paper_io
         }
 
     }
+    class BOT
+    {
+        public void Granica(byte x)
+        {
+            
+        }
+    }
 }
