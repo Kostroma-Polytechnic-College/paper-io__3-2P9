@@ -20,7 +20,7 @@ namespace paper_io
     public partial class Start : Window
     {
         Game game;
-
+        Room room;
         public Start()
         {
             InitializeComponent();
@@ -42,6 +42,9 @@ namespace paper_io
                 else
                 {
                     game = new Game(n);
+                    room = new Room();
+                    room.Show();
+                    window.WindowState = WindowState.Minimized;
                 }
             }
             else
