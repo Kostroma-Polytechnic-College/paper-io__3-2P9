@@ -31,7 +31,7 @@ namespace paper_io
             bool success = byte.TryParse(Gamers.Text, out n);
             if (success)
             {
-                if (n <= 1)
+                if (n < 1)
                 {
                     Error.Content = "Слишком мало";
                 }
