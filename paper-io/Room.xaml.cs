@@ -17,14 +17,14 @@ using System.Windows.Threading;
 namespace paper_io
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Start.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Room : Window
     {
         enum Direction { left, right, up, down, none };
         double x = 0;
         double y = 0;
-        public MainWindow()
+        public Room()
         {
             InitializeComponent();
             DispatcherTimer timer = new DispatcherTimer();
