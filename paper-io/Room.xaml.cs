@@ -38,44 +38,44 @@ namespace paper_io
                 x -= .05;
                 Canvas.SetLeft(Player, x);
             }
-            if (Keyboard.IsKeyDown(Key.Up))
+            else if (Keyboard.IsKeyDown(Key.Up))
             {
                 y -= .05;
                 Canvas.SetTop(Player, y);
             }
-            if (Keyboard.IsKeyDown(Key.Down))
+            else if (Keyboard.IsKeyDown(Key.Down))
             {
                 y += .05;
                 Canvas.SetTop(Player, y);
             }
-            if (Keyboard.IsKeyDown(Key.Right))
+            else if (Keyboard.IsKeyDown(Key.Right))
             {
                 x += .05;
                 Canvas.SetLeft(Player, x);
             }
         }
-        //private void MoveCamera(object sender, EventArgs e)
-        //{
-        //    if (Keyboard.IsKeyDown(Key.Left))
-        //    {
-        //        x -= .05;
-        //        Canvas.SetLeft(CanvasViewer, x);
-        //    }
-        //    if (Keyboard.IsKeyDown(Key.Up))
-        //    {
-        //        y -= .05;
-        //        Canvas.SetTop(CanvasViewer, y);
-        //    }
-        //    if (Keyboard.IsKeyDown(Key.Down))
-        //    {
-        //        y += .05;
-        //        Canvas.SetTop(CanvasViewer, y);
-        //    }
-        //    if (Keyboard.IsKeyDown(Key.Right))
-        //    {
-        //        x += .05;
-        //        Canvas.SetLeft(CanvasViewer, x);
-        //    }
-        //}
+        private void MoveCamera(object sender, EventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.Left))
+            {
+                x -= .05;
+                Canvas.SetLeft(CanvasViewer, x);
+            }
+            else if (Keyboard.IsKeyDown(Key.Up))
+            {
+                y -= .05;
+                Canvas.SetTop(CanvasViewer, y);
+            }
+            else if (Keyboard.IsKeyDown(Key.Down))
+            {
+                y += .05;
+                Canvas.SetTop(CanvasViewer, y);
+            }
+            else if (Keyboard.IsKeyDown(Key.Right))
+            {
+                x += .05;
+                Canvas.SetLeft(CanvasViewer, x);
+            }
+        }
     }
 }
