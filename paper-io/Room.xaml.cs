@@ -21,7 +21,7 @@ namespace paper_io
     /// </summary>
     public partial class Room : Window
     {
-        enum Direction { left, right, up, down, none };
+        enum Direction { left, right, up, down,};
         double x = 0;
         double y = 0;
         public Room()
@@ -35,22 +35,22 @@ namespace paper_io
         {
             if (Keyboard.IsKeyDown(Key.Left))
             {
-                x -= .05;
+                x -= .025;
                 Canvas.SetLeft(Player, x);
             }
             else if (Keyboard.IsKeyDown(Key.Up))
             {
-                y -= .05;
+                y -= .025;
                 Canvas.SetTop(Player, y);
             }
             else if (Keyboard.IsKeyDown(Key.Down))
             {
-                y += .05;
+                y += .025;
                 Canvas.SetTop(Player, y);
             }
             else if (Keyboard.IsKeyDown(Key.Right))
             {
-                x += .05;
+                x += .025;
                 Canvas.SetLeft(Player, x);
             }
         }

@@ -46,7 +46,7 @@ namespace paper_io
             }
             else
             { 
-                Error.Content = "Должно быть положительное число";
+                Error.Content = "Введите число от 2 до 10";
             }
         }
     }
