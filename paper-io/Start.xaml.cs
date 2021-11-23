@@ -31,24 +31,21 @@ namespace paper_io
             bool success = byte.TryParse(Gamers.Text, out n);
             if (success)
             {
-                if (n < 1)
+                if (n <= 1 | n>10)
                 {
-                    Error.Content = "Слишком мало";
+                    Error.Content = "Введите число от 2 до 10";
                 }
-                if (n > 10)
-                {
-                    Error.Content = "Слишком много";
-                }
-                else
+                else 
                 {
                     game = new Game(n);
                     room = new Room();
                     room.Show();
                     window.WindowState = WindowState.Minimized;
                 }
+
             }
             else
-            {
+            { 
                 Error.Content = "Должно быть положительное число";
             }
         }
