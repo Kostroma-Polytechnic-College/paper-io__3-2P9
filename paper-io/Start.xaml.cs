@@ -50,8 +50,9 @@ namespace paper_io
                 {
                     game = new Game(n);
                     room = new Room();
-                    room.Show();
-                    window.WindowState = WindowState.Minimized;
+                    this.Hide();
+                    room.ShowDialog();
+                    this.Show();
                 }
             }
             else
