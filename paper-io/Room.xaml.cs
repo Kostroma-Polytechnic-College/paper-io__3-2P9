@@ -21,7 +21,7 @@ namespace paper_io
     /// </summary>
     public partial class Room : Window
     {
-        enum Direction { left, right, up, down};
+        enum Direction { left, right, up, down}
         double x = 0;
         double y = 0;
         public Room()
