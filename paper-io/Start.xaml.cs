@@ -19,12 +19,23 @@ namespace paper_io
     /// </summary>
     public partial class Start : Window
     {
+        /// <summary>
+        /// Используется для последующей передачи классу Game количества игроков
+        /// </summary>
         Game game;
+        /// <summary>
+        /// Будет использоваться для перехода к окну с игрой
+        /// </summary>
         Room room;
         public Start()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// При нажатии на кнопку происходит проверка количества игроков, отправка количества игроков в класс Game и запуск окна с игрой Room
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             byte n;

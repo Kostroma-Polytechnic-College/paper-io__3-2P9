@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace paper_io
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Player
     {
     }

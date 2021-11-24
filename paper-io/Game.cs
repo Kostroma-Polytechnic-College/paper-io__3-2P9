@@ -6,10 +6,23 @@ using System.Threading.Tasks;
 
 namespace paper_io
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class Game
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public Player[] Players;
+        /// <summary>
+        /// 
+        /// </summary>
         public Player[,] Room;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="n"></param>
         public Game(byte n)
         {
             Players = new Player[n];

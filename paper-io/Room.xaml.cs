@@ -21,6 +21,9 @@ namespace paper_io
     /// </summary>
     public partial class Room : Window
     {
+        /// <summary>
+        /// 
+        /// </summary>
         enum Direction { left, right, up, down}
         double x = 0;
         double y = 0;
@@ -31,6 +34,11 @@ namespace paper_io
             timer.Tick += new EventHandler(MovePlayer);
             timer.Start();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MovePlayer(object sender, EventArgs e)
         {
             if (Keyboard.IsKeyDown(Key.Left))
@@ -55,28 +63,30 @@ namespace paper_io
             }
         }
         #region IDK
-        //private void MoveCamera(object sender, EventArgs e)
-        //{
-        //   if (Keyboard.IsKeyDown(Key.Left))
-        //   {
-        //       x -= .05;
-        //       Canvas.SetLeft(CanvasViewer, x);
-        //   }
-        //   else if (Keyboard.IsKeyDown(Key.Up))
-        //   {
-        //      y -= .05;
-        //       Canvas.SetTop(CanvasViewer, y);
-        //   }
-        //   else if (Keyboard.IsKeyDown(Key.Down))
-        //   {
-        //       y += .05;
-        //       Canvas.SetTop(CanvasViewer, y);
-        //   }
-        //   else if (Keyboard.IsKeyDown(Key.Right))
-        //   {
-        //       x += .05;
-        //       Canvas.SetLeft(CanvasViewer, x);
-        //   }
+        /*
+         * private void MoveCamera(object sender, EventArgs e)
+        {
+           if (Keyboard.IsKeyDown(Key.Left))
+           {
+               x -= .05;
+               Canvas.SetLeft(CanvasViewer, x);
+           }
+           else if (Keyboard.IsKeyDown(Key.Up))
+           {
+              y -= .05;
+               Canvas.SetTop(CanvasViewer, y);
+           }
+          else if (Keyboard.IsKeyDown(Key.Down))
+           {
+               y += .05;
+               Canvas.SetTop(CanvasViewer, y);
+           }
+           else if (Keyboard.IsKeyDown(Key.Right))
+           {
+               x += .05;
+               Canvas.SetLeft(CanvasViewer, x);
+           }
+        */
         #endregion
     }
 }
