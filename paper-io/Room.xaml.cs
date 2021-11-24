@@ -22,7 +22,7 @@ namespace paper_io
     public partial class Room : Window
     {
         /// <summary>
-        /// 
+        /// свойство для задачи нажатий клавиш через которые игрок решает куда ему двигатся
         /// </summary>
         enum Direction { left, right, up, down}
         double x = 0;
@@ -35,7 +35,7 @@ namespace paper_io
             timer.Start();
         }
         /// <summary>
-        /// 
+        /// движение игрока (как будут меняться координаты игрока при нажатии)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
