@@ -42,7 +42,6 @@ namespace paper_io
                     room.Show();
                     window.WindowState = WindowState.Minimized;
                 }
-
             }
             else
             { 

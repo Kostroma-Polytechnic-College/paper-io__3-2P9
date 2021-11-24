@@ -8,7 +8,6 @@ namespace paper_io
 {
     class Game
     {
-
         public Player[] Players;
         public Player[,] Room;
         public Game(byte n)
@@ -16,6 +15,5 @@ namespace paper_io
             Players = new Player[n];
             Room = new Player[n * 10, n * 10];
         }
-
     }
 }
