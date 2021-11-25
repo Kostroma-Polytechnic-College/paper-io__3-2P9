@@ -24,15 +24,17 @@ namespace paper_io
         /// <summary>
         /// свойство для задачи нажатий клавиш через которые игрок решает куда ему двигатся
         /// </summary>
-        enum Direction { left, right, up, down}
+        enum Direction { left, right, up, down }
         double x = 0;
         double y = 0;
-        public Room()
+        
+        public Room(byte n)
         {
             InitializeComponent();
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(MovePlayer);
             timer.Start();
+            d.Content = n;
         }
         /// <summary>
         /// движение игрока (как будут меняться координаты игрока при нажатии)

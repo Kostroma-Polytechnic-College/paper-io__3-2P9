@@ -22,11 +22,7 @@ namespace paper_io
         /// <summary>
         /// Используется для последующей передачи классу Game количества игроков
         /// </summary>
-        Game game;
-        /// <summary>
-        /// Будет использоваться для перехода к окну с игрой
-        /// </summary>
-        Room room;
+         Game game;
         public Start()
         {
             InitializeComponent();
@@ -46,10 +42,13 @@ namespace paper_io
                 {
                     Error.Content = "Введите число от 2 до 10";
                 }
-                else 
+                else
                 {
                     game = new Game(n);
-                    room = new Room();
+                    /// <summary>
+                    /// используеться для перехода к окну с игрой
+                    /// </summary>
+                    Room room = new Room(n);
                     this.Hide();
                     room.ShowDialog();
                     this.Show();

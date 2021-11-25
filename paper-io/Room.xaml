@@ -15,7 +15,9 @@
             <Canvas x:Name="Canvas" IsHitTestVisible="False" Height="20" Width="19">
                 <Rectangle x:Name="Player" Fill="Red" Canvas.Left="0" Canvas.Top="0" Height="20" Width="20" />
             </Canvas>
+
         </ScrollViewer>
+        <Label Content="" HorizontalAlignment="Left" Margin="147,87,0,0" VerticalAlignment="Top" x:Name="d" FontSize="18"/>
 
     </Grid>
 </Window>
