@@ -62,31 +62,5 @@ namespace paper_io
                 Canvas.SetLeft(Player, x);
             }
         }
-        #region IDK
-        /*
-         * private void MoveCamera(object sender, EventArgs e)
-        {
-           if (Keyboard.IsKeyDown(Key.Left))
-           {
-               x -= .05;
-               Canvas.SetLeft(CanvasViewer, x);
-           }
-           else if (Keyboard.IsKeyDown(Key.Up))
-           {
-              y -= .05;
-               Canvas.SetTop(CanvasViewer, y);
-           }
-          else if (Keyboard.IsKeyDown(Key.Down))
-           {
-               y += .05;
-               Canvas.SetTop(CanvasViewer, y);
-           }
-           else if (Keyboard.IsKeyDown(Key.Right))
-           {
-               x += .05;
-               Canvas.SetLeft(CanvasViewer, x);
-           }
-        */
-        #endregion
     }
 }
