@@ -30,7 +30,7 @@ namespace paper_io
         /// <summary>
         /// При нажатии на кнопку происходит проверка количества игроков, отправка количества игроков в класс Game и запуск окна с игрой Room
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender"></param> Предоставляет ссылку на кнопку
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -46,7 +46,7 @@ namespace paper_io
                 {
                     game = new Game(n);
                     /// <summary>
-                    /// используеться для перехода к окну с игрой
+                    /// используеться для перехода к окну с игрой и передачи количества игроков
                     /// </summary>
                     Room room = new Room(n);
                     this.Hide();

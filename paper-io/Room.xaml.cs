@@ -34,7 +34,6 @@ namespace paper_io
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += new EventHandler(MovePlayer);
             timer.Start();
-            d.Content = n;
         }
         /// <summary>
         /// движение игрока (как будут меняться координаты игрока при нажатии)
