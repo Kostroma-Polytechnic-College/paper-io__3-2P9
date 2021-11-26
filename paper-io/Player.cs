@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace paper_io
 {
     /// <summary>
-    /// 
+    /// Заглушка класса Player
     /// </summary>
     public class Player
     {
