@@ -8,6 +8,19 @@ namespace paper_io
 {
     public class Player
     {
+        public enum Dir
+        {
+            Up, Left, Down, Right
+        }
+        public Dir dir;
+        public Player()
+        {
+            dir = Dir.Up;
+        }
+        public void Bot()
+        {
+
+        }
 
     }
 }
