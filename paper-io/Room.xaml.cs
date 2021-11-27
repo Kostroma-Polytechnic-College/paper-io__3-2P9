@@ -21,22 +21,8 @@ namespace paper_io
     /// </summary>
     public partial class Room : Window
     {
-
         public Room(byte n)
         {
-            InitializeComponent();
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Tick += new EventHandler(MovePlayer);
-            timer.Start();
-        }
-        /// <summary>
-        /// движение игрока (как будут меняться координаты игрока при нажатии)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MovePlayer(object sender, EventArgs e)
-        {
-
         }
     }
 }
