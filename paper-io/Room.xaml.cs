@@ -21,13 +21,7 @@ namespace paper_io
     /// </summary>
     public partial class Room : Window
     {
-        /// <summary>
-        /// свойство для задачи нажатий клавиш через которые игрок решает куда ему двигатся
-        /// </summary>
-        enum Direction { left, right, up, down }
-        double x = 0;
-        double y = 0;
-        
+
         public Room(byte n)
         {
             InitializeComponent();
@@ -42,26 +36,7 @@ namespace paper_io
         /// <param name="e"></param>
         private void MovePlayer(object sender, EventArgs e)
         {
-            if (Keyboard.IsKeyDown(Key.Left))
-            {
-                x -= .025;
-                Canvas.SetLeft(Player, x);
-            }
-            else if (Keyboard.IsKeyDown(Key.Up))
-            {
-                y -= .025;
-                Canvas.SetTop(Player, y);
-            }
-            else if (Keyboard.IsKeyDown(Key.Down))
-            {
-                y += .025;
-                Canvas.SetTop(Player, y);
-            }
-            else if (Keyboard.IsKeyDown(Key.Right))
-            {
-                x += .025;
-                Canvas.SetLeft(Player, x);
-            }
+
         }
     }
 }

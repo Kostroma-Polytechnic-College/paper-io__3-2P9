@@ -16,7 +16,7 @@ namespace paper_io
         /// </summary>
         public Player[] Players;
         /// <summary>
-        /// Массив игроков на поле
+        /// Хранит территорию игроков
         /// </summary>
         public Player[,] Room;
         /// <summary>

@@ -19,10 +19,6 @@ namespace paper_io
     /// </summary>
     public partial class Start : Window
     {
-        /// <summary>
-        /// Используется для последующей передачи классу Game количества игроков
-        /// </summary>
-        Game game;
         public Start()
         {
             InitializeComponent();
@@ -44,7 +40,6 @@ namespace paper_io
                 }
                 else
                 {
-                    game = new Game(n);
                     /// <summary>
                     /// используеться для перехода к окну с игрой и передачи количества игроков
                     /// </summary>
