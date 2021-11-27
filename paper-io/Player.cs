@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace paper_io
 {
     /// <summary>
-    /// Заглушка класса Player
+    /// Класс, отвечающий за логику игрока
     /// </summary>
     public class Player
     {

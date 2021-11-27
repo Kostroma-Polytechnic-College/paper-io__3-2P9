@@ -16,13 +16,13 @@ namespace paper_io
         /// </summary>
         public Player[] Players;
         /// <summary>
-        /// Размерность поля
+        /// Массив игроков на поле
         /// </summary>
         public Player[,] Room;
         /// <summary>
         /// Принимает количество игроков и делает поле размерностью n*n, где n- количество игроков * 10
         /// </summary>
-        /// <param name="n"></param> Количество игроков
+        /// <param name="n">Количество игроков</param>
         public Game(byte n)
         {
             Players = new Player[n];

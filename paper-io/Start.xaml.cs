@@ -22,7 +22,7 @@ namespace paper_io
         /// <summary>
         /// Используется для последующей передачи классу Game количества игроков
         /// </summary>
-         Game game;
+        Game game;
         public Start()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace paper_io
         /// <summary>
         /// При нажатии на кнопку происходит проверка количества игроков, отправка количества игроков в класс Game и запуск окна с игрой Room
         /// </summary>
-        /// <param name="sender"></param> Предоставляет ссылку на кнопку
+        /// <param name="sender">Предоставляет ссылку на кнопку</param>
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
