@@ -40,9 +40,7 @@ namespace paper_io
                 }
                 else
                 {
-                    /// <summary>
                     /// используеться для перехода к окну с игрой и передачи количества игроков
-                    /// </summary>
                     Room room = new Room(n);
                     this.Hide();
                     room.ShowDialog();
