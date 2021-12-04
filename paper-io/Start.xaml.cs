@@ -19,12 +19,15 @@ namespace paper_io
     /// </summary>
     public partial class Start : Window
     {
-        Game game;
-        Room room;
         public Start()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// При нажатии на кнопку происходит проверка количества игроков, отправка количества игроков в класс Game и запуск окна с игрой Room
+        /// </summary>
+        /// <param name="sender">Предоставляет ссылку на кнопку</param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             byte n;
@@ -35,14 +38,14 @@ namespace paper_io
                 {
                     Error.Content = "Введите число от 2 до 10";
                 }
-                else 
+                else
                 {
-                    game = new Game(n);
-                    room = new Room();
-                    room.Show();
-                    window.WindowState = WindowState.Minimized;
+                    /// используеться для перехода к окну с игрой и передачи количества игроков
+                    Room room = new Room(n);
+                    this.Hide();
+                    room.ShowDialog();
+                    this.Show();
                 }
-
             }
             else
             { 

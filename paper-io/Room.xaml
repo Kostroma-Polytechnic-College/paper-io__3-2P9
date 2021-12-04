@@ -12,10 +12,11 @@
             <ColumnDefinition Width="19*"/>
         </Grid.ColumnDefinitions>
         <ScrollViewer x:Name="CanvasViewer"   HorizontalScrollBarVisibility="Hidden"  VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2">
-            <Canvas x:Name="Canvas" IsHitTestVisible="False" Height="145" Width="138">
-                <Rectangle x:Name="Player" Fill="Red" Canvas.Left="64" Canvas.Top="63" Height="20" Width="20" />
+            <Canvas x:Name="Canvas" IsHitTestVisible="False" Height="20" Width="19">
+                <Rectangle x:Name="Player" Fill="Red" Canvas.Left="0" Canvas.Top="0" Height="20" Width="20" />
             </Canvas>
-        </ScrollViewer>
 
+        </ScrollViewer>
+        
     </Grid>
 </Window>
