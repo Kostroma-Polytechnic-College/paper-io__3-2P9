@@ -16,13 +16,12 @@ using System.Windows.Shapes;
 namespace paper_io
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Start.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Room : Window
     {
-        public MainWindow()
+        public Room(byte n)
         {
-            InitializeComponent();
         }
     }
 }
