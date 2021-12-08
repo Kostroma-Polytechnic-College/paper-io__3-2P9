@@ -15,6 +15,7 @@ namespace paper_io
         /// Список всех игроков
         /// </summary>
         public Player[] Players;
+        List<string> SPlayers = new List<string>() {};
         /// <summary>
         /// Хранит территорию игроков
         /// </summary>
