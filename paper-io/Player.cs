@@ -39,6 +39,16 @@ namespace paper_io
         }
         int m;
         int k;
+        int c; // свободная территория
+        int q; // вражеская территория
+
+        public void Step(Game[,] room)
+        {
+            if (location.X == c && location.Y == c && location.X == q && location.Y == q)
+            {
+                plume.Add(location.X);
+            }
+        }
 
         public void Bot(Game[,] room)
         {
