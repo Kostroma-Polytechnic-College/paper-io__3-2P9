@@ -34,7 +34,6 @@ namespace paper_io
             {
                 foreach (Point plumeItem in plume)
                 {
-
                     if (playerItem.location.X == plumeItem.X && playerItem.location.Y == plumeItem.Y)
                     {
                         return true;
