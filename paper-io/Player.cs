@@ -12,15 +12,34 @@ namespace paper_io
     /// </summary>
     public class Player
     {
-        enum Direction
+        public enum Direction
         {
             Left,
+            Up,
             Right,
-            Down,
-            Up
+            Down
         }
-        Direction direction;
-        public Player(byte rand)
+        public Direction direction;
+
+        public void ToLeft()
+        {
+            int result = (int)direction - 1;
+            if (result < 0)
+            {
+                result = 3;
+            }
+            direction = (Direction)result;
+        }
+        public void ToRight()
+        {
+            int result = (int)direction + 1;
+            if (result > 3)
+            {
+                result = 0;
+            }
+            direction = (Direction)result;
+        }
+        public Player()
         {
             
         }
@@ -46,11 +65,11 @@ namespace paper_io
         {
             if (location.X == c && location.Y == c && location.X == q && location.Y == q)
             {
-                plume.Add(location.X);
+                plume.Add(location);
             }
         }
 
-        public void Bot(Game[,] room)
+     /*   public void Bot(Game[,] room)
         {
             ///Если со всех сторон находится территория текущего игрока, то направление движения не менять. 
             if (location.X + 1 == m && location.X - 1 == m && location.Y + 1 == m && location.Y - 1 == m)
@@ -86,5 +105,6 @@ namespace paper_io
             }
 
         }
+     */
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,10 @@ namespace paper_io
     {
         public Room(byte n)
         {
+            InitializeComponent();
+            Player player = new Player();
+            Debug.WriteLine(player.direction);
+            Debug.WriteLine(player.ToRight);
         }
     }
 }
