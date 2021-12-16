@@ -26,7 +26,8 @@ namespace paper_io
             InitializeComponent();
             Player player = new Player();
             Debug.WriteLine(player.direction);
-            Debug.WriteLine(player.ToRight);
+            player.ToLeft();
+            Debug.WriteLine(player.direction);
         }
     }
 }
