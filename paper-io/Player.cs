@@ -94,39 +94,27 @@ namespace paper_io
             }
             ///Если впереди текущего игрока находится стена и слева нет стены, то повернуть на лево.
             else if ((int)location.X + 1 == k && (int)location.Y - 1 != k)
-            {
                 ToLeft();
-            }
             ///Если впереди игрока находится стена и справа нет стены, то повернуть направо.
-            else if ((int)location.X + 1 == k  && (int)location.Y + 1 !=  k )
-            {
+            else if ((int)location.X + 1 == k && (int)location.Y + 1 != k)
                 ToRight();
-            }
             ///Если впереди и слева и справа нет территории текущего игрока, 
             ///то повернуть направо если там нет стены или повернуть налево если справа есть стена.
             else if ((int)location.X + 1 == m && (int)location.Y + 1 == m && (int)location.Y - 1 == m)
             {
-                if ((int)location.Y - 1 != k )
-                {
+                if ((int)location.Y - 1 != k)
                     ToRight();
-                }
                 else
-                {
                     ToLeft();
-                }
             }
             ///Если впереди нет территории текущего игрока, а слево или справа есть территория текущего игрока, 
             ///то повернуть в сторону территории текущего игрока.
-            else if ((int)location.X + 1 != m )
+            else if ((int)location.X + 1 != m)
             {
                 if ((int)location.Y + 1 == m)
-                {
                     ToLeft();
-                }
                 else
-                {
                     ToRight();
-                }
             }
         }
     }
