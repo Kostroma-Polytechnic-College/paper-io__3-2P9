@@ -47,9 +47,6 @@ namespace paper_io
             }
             direction = (Direction)result;
         }
-
-
-
         Point location = new Point();
         List<Point> plume = new List<Point>();
 
@@ -94,7 +91,6 @@ namespace paper_io
             ///Если со всех сторон находится территория текущего игрока, то направление движения не менять. 
             if ((int)location.X + 1 == m && (int)location.X - 1 == m && (int)location.Y + 1 == m && (int)location.Y - 1 == m)
             {
-
             }
             ///Если впереди текущего игрока находится стена и слева нет стены, то повернуть на лево.
             else if ((int)location.X + 1 == k && (int)location.Y - 1 != k)
@@ -132,8 +128,6 @@ namespace paper_io
                     ToRight();
                 }
             }
-
         }
-     
     }
 }
