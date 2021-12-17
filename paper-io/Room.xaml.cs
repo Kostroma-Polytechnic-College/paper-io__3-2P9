@@ -24,11 +24,6 @@ namespace paper_io
         public Room(byte n)
         {
             InitializeComponent();
-            Player player = new Player();
-            Debug.WriteLine(player.direction);
-            
-            player.Bot();
-            Debug.WriteLine(player.direction);
         }
     }
 }
