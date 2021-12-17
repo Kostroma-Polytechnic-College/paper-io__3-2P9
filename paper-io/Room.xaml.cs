@@ -26,7 +26,8 @@ namespace paper_io
             InitializeComponent();
             Player player = new Player();
             Debug.WriteLine(player.direction);
-            player.ToLeft();
+            
+            player.Bot();
             Debug.WriteLine(player.direction);
         }
     }

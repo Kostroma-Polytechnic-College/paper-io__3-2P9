@@ -74,8 +74,10 @@ namespace paper_io
                 plume.Add(location);
             }
         }
-
-        public void Bot(Game[,] room)
+        /// <summary>
+        /// Метод, реализующий логику поведения бота
+        /// </summary>
+        public void Bot()
         {
             ///Если со всех сторон находится территория текущего игрока, то направление движения не менять. 
             if (location.X + 1 == m && location.X - 1 == m && location.Y + 1 == m && location.Y - 1 == m)
