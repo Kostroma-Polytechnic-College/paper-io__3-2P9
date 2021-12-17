@@ -12,6 +12,9 @@ namespace paper_io
     /// </summary>
     public class Player
     {
+        /// <summary>
+        /// Перечисление сторон для управления
+        /// </summary>
         public enum Direction
         {
             Left,
@@ -20,7 +23,9 @@ namespace paper_io
             Down
         }
         public Direction direction;
-
+        /// <summary>
+        /// Метод, реализующий поворот налево
+        /// </summary>
         public void ToLeft()
         {
             int result = (int)direction - 1;
@@ -30,6 +35,9 @@ namespace paper_io
             }
             direction = (Direction)result;
         }
+        /// <summary>
+        /// Метод, реализующий поворот направо
+        /// </summary>
         public void ToRight()
         {
             int result = (int)direction + 1;
@@ -40,10 +48,7 @@ namespace paper_io
             direction = (Direction)result;
         }
 
-        public Player()
-        {
-            
-        }
+
 
         Point location = new Point();
         List<Point> plume = new List<Point>();
@@ -57,8 +62,8 @@ namespace paper_io
                     return true;
             return false;
         }
-        int m;
-        int k;
+        int m; // территоря текущего икгрока
+        int k; // стена
         int c; // свободная территория
         int q; // вражеская территория
 
@@ -100,9 +105,16 @@ namespace paper_io
                 }
             }
             ///Если впереди нет территории текущего игрока, а слево или справа есть территория текущего игрока, то повернуть в сторону территории текущего игрока.
-            else if (location.X != m )
+            else if (location.X + 1 != m )
             {
-
+                if (location.Y + 1 == m)
+                {
+                    ToLeft();
+                }
+                else
+                {
+                    ToRight();
+                }
             }
 
         }
