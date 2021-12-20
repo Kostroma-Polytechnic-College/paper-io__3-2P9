@@ -60,14 +60,6 @@ namespace paper_io
             return false;
         }
         /// <summary>
-        /// Территория текущего игрока
-        /// </summary>
-        int m;
-        /// <summary>
-        /// Стена поля
-        /// </summary>
-        int k;
-        /// <summary>
         /// свободная территория
         /// </summary>
         int c;
@@ -84,38 +76,106 @@ namespace paper_io
             }
         }
         /// <summary>
-        /// Метод, реализующий логику поведения бота
+        /// Метод, отвечающий за изменение направления бота
         /// </summary>
-        public void Bot()
+        /// <param name="room">Игровое поле</param>
+        /// <returns>Истина, если направление изменилось</returns>
+        public bool Bot(Player[,] room)
         {
-            ///Если со всех сторон находится территория текущего игрока, то направление движения не менять. 
-            if ((int)location.X + 1 == m && (int)location.X - 1 == m && (int)location.Y + 1 == m && (int)location.Y - 1 == m)
+            int x = (int)location.X;
+            int y = (int)location.Y;
+
+            return AllSidesFriendTerritory(room, x, y)
+                || ForwardLeft(room, x, y)
+                || ForwardRight(room, x, y)
+                || ForwardLeftRight(room, x, y);
+        }
+        /// <summary>
+        /// Если впереди игрока находится стена и справа нет стены, то повернуть направо.
+        /// </summary>
+        /// <param name="room">Игровое поле</param>
+        /// <param name="x">Настоящее положение игрока по оси X</param>
+        /// <param name="y">Настоящее положение игрока по оси Y</param>
+        /// <returns>Истина, если направление изменилось</returns>
+        bool ForwardRight(Player[,] room, int x, int y)
+        {
+            if (y < room.Length - 1)
             {
+                if (x == 0 || x == room.Length - 1)
+                {
+                    ToRight();
+                    return true;
+                }
             }
-            ///Если впереди текущего игрока находится стена и слева нет стены, то повернуть на лево.
-            else if ((int)location.X + 1 == k && (int)location.Y - 1 != k)
+
+            return false;
+        }
+        /// <summary>
+        /// Если впереди текущего игрока находится стена и слева нет стены, то повернуть налево.
+        /// </summary>
+        /// <param name="room">Игровое поле</param>
+        /// <param name="x">Настоящее положение игрока по оси X</param>
+        /// <param name="y">Настоящее положение игрока по оси Y</param>
+        /// <returns>Истина, если направление изменилось</returns>
+        bool ForwardLeft(Player[,] room, int x, int y)
+        {
+            if (y > 0)
+            {
+                if (x == 0 || x == room.Length - 1)
+                {
+                    ToLeft();
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        /// <summary>
+        /// Если со всех сторон находится территория текущего игрока, то направление движения не менять
+        /// </summary>
+        /// <param name="room">Игровое поле</param>
+        /// <param name="x">Настоящее положение игрока по оси X</param>
+        /// <param name="y">Настоящее положение игрока по оси Y</param>
+        /// <returns>Истина, если направление изменилось</returns>
+        bool AllSidesFriendTerritory(Player[,] room, int x, int y)
+        {
+            if (room[x, y + 1] == this
+                && room[x - 1, y] == this
+                && room[x + 1, y] == this
+                && room[x, y - 1] == this
+                )
+            {
+                return false;
+            }
+
+            return true;
+        }
+        /// <summary>
+        /// Если впереди и слева и справа нет территории текущего игрока, то повернуть
+        /// направо если там нет стены или повернуть налево если справа есть стена.
+        /// </summary>
+        /// <param name="room">Игровое поле</param>
+        /// <param name="x">Настоящее положение игрока по оси X</param>
+        /// <param name="y">Настоящее положение игрока по оси Y</param>
+        /// <returns>Истина, если направление изменилось</returns>
+        bool ForwardLeftRight(Player[,] room, int x, int y)
+        {
+            if (room[x, y + 1] == this
+                && room[x - 1, y] == this
+                && room[x + 1, y] == this
+                )
+            {
+                if (x != 0 || y < room.Length - 1)
+                {
+                    ToRight();
+                    return true;
+                }
+
                 ToLeft();
-            ///Если впереди игрока находится стена и справа нет стены, то повернуть направо.
-            else if ((int)location.X + 1 == k && (int)location.Y + 1 != k)
-                ToRight();
-            ///Если впереди и слева и справа нет территории текущего игрока, 
-            ///то повернуть направо если там нет стены или повернуть налево если справа есть стена.
-            else if ((int)location.X + 1 == m && (int)location.Y + 1 == m && (int)location.Y - 1 == m)
-            {
-                if ((int)location.Y - 1 != k)
-                    ToRight();
-                else
-                    ToLeft();
+                return true;
             }
-            ///Если впереди нет территории текущего игрока, а слево или справа есть территория текущего игрока, 
-            ///то повернуть в сторону территории текущего игрока.
-            else if ((int)location.X + 1 != m)
-            {
-                if ((int)location.Y + 1 == m)
-                    ToLeft();
-                else
-                    ToRight();
-            }
+
+            return false;
         }
     }
 }
