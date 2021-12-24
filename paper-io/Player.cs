@@ -3,62 +3,90 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
-using System.Windows;
+///<summary> 
+///Это пространво имён необходимо для реализации структуры Point 
+///</summary>
 using System.Windows;
 
 namespace paper_io
 {
     /// <summary>
+    /// Перечисление сторон для управления
+    /// </summary>
+    public enum Direction
+    {
+        Left,
+        Up,
+        Right,
+        Down
+    }
+    /// <summary>
     /// Класс, отвечающий за логику игрока
     /// </summary>
     public class Player
     {
-        /// <summary>
-        /// Перечисление сторон для управления
-        /// </summary>
-        public enum Direction
-        {
-            Left,
-            Up,
-            Right,
-            Down
-        }
-        public Direction direction;
+        public Direction Direction;
         /// <summary>
         /// Метод, реализующий поворот налево
         /// </summary>
         public void ToLeft()
         {
-            int result = (int)direction - 1;
+            int result = (int)Direction - 1;
             if (result < 0)
             {
                 result = 3;
             }
-            direction = (Direction)result;
+            Direction = (Direction)result;
         }
         /// <summary>
         /// Метод, реализующий поворот направо
         /// </summary>
         public void ToRight()
         {
-            int result = (int)direction + 1;
+            int result = (int)Direction + 1;
             if (result > 3)
             {
                 result = 0;
             }
-            direction = (Direction)result;
+            Direction = (Direction)result;
         }
-        Point location = new Point();
+        /// <summary>
+        /// положение игрока
+        /// </summary>
+        public Point location = new Point();
+        /// <summary>
+        /// координаты шлейфа
+        /// </summary>
         List<Point> plume = new List<Point>();
-
-        Boolean areNotEqual = true;
-
-        public bool CheckdDeathCondition(Point Players)
+        /// <summary>
+        /// условие смерти
+        /// </summary>
+        /// <param name="players">для проверки касания шлейфа</param>
+        /// <param name="Room">для проверки наличия территории игрока и проверки выезда игрока за карту</param>
+        /// <returns></returns>
+        public bool CheckdDeathCondition(List<Player> players, Player[,] Room)
         {
-            foreach (Point item in plume)
-                if (item.X == location.X && item.Y == location.Y)
-                    return true;
+            foreach (Player playerItem in players)
+            {
+                foreach (Point plumeItem in plume)
+                {
+                    if (playerItem.location.X == plumeItem.X && playerItem.location.Y == plumeItem.Y)
+                    {
+                        return true;
+                    }
+                }
+            }
+            if (location.X < 0 || location.X > Room.GetLength(1) || location.Y < 0 || location.Y > Room.GetLength(0))
+            {
+                return true;
+            }
+            foreach (Player territory in Room)
+            {
+                if (this == territory)
+                {
+                }
+                else return true;
+            }
             return false;
         }
         /// <summary>
