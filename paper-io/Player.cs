@@ -60,22 +60,6 @@ namespace paper_io
             return false;
         }
         /// <summary>
-        /// свободная территория
-        /// </summary>
-        int c;
-        /// <summary>
-        /// вражеская территория
-        /// </summary>
-        int q; 
-
-        public void Step(Game[,] room)
-        {
-            if (location.X == c && location.Y == c && location.X == q && location.Y == q)
-            {
-                plume.Add(location);
-            }
-        }
-        /// <summary>
         /// Метод, отвечающий за изменение направления бота
         /// </summary>
         /// <param name="room">Игровое поле</param>
