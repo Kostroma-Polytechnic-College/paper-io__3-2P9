@@ -9,7 +9,7 @@ namespace paper_io
     /// <summary>
     /// Основной класс, использьзуется для создания поля и отслеживания количества игроков
     /// </summary>
-    class Game
+    public class Game
     {
         /// <summary>
         /// Список всех игроков

@@ -22,6 +22,7 @@ namespace paper_io
     {
         public Room(byte n)
         {
+            InitializeComponent();
         }
     }
 }
